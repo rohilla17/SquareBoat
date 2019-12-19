@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.newsapp.viewModel.ArticleViewModel"/>
+
+    </data>
+
+
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:scaleType="fitXY"
+        app:imageURI="@{viewModel.getArticleImage()}"
+        app:placeholderImage="@android:drawable/ic_menu_gallery"
+        android:id="@+id/article_image"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"/>
+
+    <TextView
+        android:id="@+id/article_title"
+        app:mutableText="@{viewModel.getArticleTitle()}"
+        android:textColor="@android:color/black"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:maxLines="2"
+        tools:text="Bitcoin Will Quickly Reverse From Intense Plunge Because of These 3 Main Factors - newsBTC"
+        android:padding="8dp"
+        android:layout_below="@+id/source_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:padding="8dp"
+        app:mutableText="@{viewModel.getArticleSource()}"
+        android:layout_below="@+id/article_image"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="12sp"
+        tools:text="NewsBtc.com"
+        android:id="@+id/source_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:mutableText="@{viewModel.getArticleDate()}"
+        android:padding="8dp"
+        tools:text="2019-12-18"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/article_image"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/article_title"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+</RelativeLayout>
+
+</layout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="post_error">An error occurred while loading the articles</string>
+    <string name="api_key">adb33825dd35457689c049ce7c90173a</string>
+    <string name="retry">Retry</string>
+</resources>
